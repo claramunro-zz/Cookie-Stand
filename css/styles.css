@@ -1,0 +1,40 @@
+/* table {
+    empty-cells: hide;
+} */
+
+body {
+    background-color: rgb(241, 89, 43);
+  }
+  
+  h1 {
+    font-size: 58px;
+    color: rgb(255, 255, 255);
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  h2, h3{
+    font-size: 35px;
+    color: white;
+    font-family: 'Bungee', cursive;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  p {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    font-family: 'Bungee', cursive;
+    line-height: 1.5;
+  }
+
+  ul {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      list-style-type: none;
+      line-height: 1.2;
+
+  }
