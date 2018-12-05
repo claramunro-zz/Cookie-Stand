@@ -14,8 +14,16 @@ body {
     padding-top: 100px;
   }
 
-  h2, h3{
+  h2 {
     font-size: 35px;
+    color: white;
+    font-family: 'Bungee', cursive;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
     color: white;
     font-family: 'Bungee', cursive;
     text-align: center;
@@ -25,6 +33,7 @@ body {
   p {
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 50px;
     color: white;
     font-family: 'Bungee', cursive;
     line-height: 1.5;
@@ -36,5 +45,11 @@ body {
       text-align: center;
       list-style-type: none;
       line-height: 1.2;
+  }
 
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
   }
