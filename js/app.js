@@ -1,27 +1,188 @@
 'use strict';
 
-var months = ['May','June','July','August','September'];
+var openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
-var twoThousandEighteen = {
-  miles: [54, 12, 9000, 8, 52],
 
-  render: function() {
-    var ulElement = document.getElementById('list2018');
+// First & Pike Store 1
 
-    // Goal: create list items and add them to the DOM
-    for(var i = 0; i < this.miles.length; i++){
+var firstAndPike =  {
+  minCust: 23,
+  maxCust: 65,
+  avgCookiePerCust: 6.3,
 
-      // 1. Access / create the element
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('first-pike');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
       var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
 
-      // 2. Give the element content
-      liElement.textContent = `In ${months[i]}, I hiked ${this.miles[i]} miles.`;
-
-      // 3. Append the element to its parents (usually to its parent)
       ulElement.appendChild(liElement);
     }
 
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
   }
+
 };
 
-twoThousandEighteen.render();
+
+// SeaTac Store 2
+
+var seaTac =  {
+  storeName: 'SeaTac',
+  minCust: 3,
+  maxCust: 24,
+  avgCookiePerCust: 1.2,
+
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('sea-tac');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
+      var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
+
+      ulElement.appendChild(liElement);
+    }
+
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
+  }
+
+};
+
+// Seattle Center Store 3
+
+var seattleCenter =  {
+  minCust: 3,
+  maxCust: 24,
+  avgCookiePerCust: 1.2,
+
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('seattle-center');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
+      var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
+
+      ulElement.appendChild(liElement);
+    }
+
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
+  }
+
+};
+
+// capitol-hill Store 4
+
+var capitolHill =  {
+  minCust: 3,
+  maxCust: 24,
+  avgCookiePerCust: 1.2,
+
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('capitol-hill');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
+      var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
+
+      ulElement.appendChild(liElement);
+    }
+
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
+  }
+
+};
+
+
+// Alki Store 5
+
+var alki =  {
+  minCust: 3,
+  maxCust: 24,
+  avgCookiePerCust: 1.2,
+
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('alki');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
+      var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
+
+      ulElement.appendChild(liElement);
+    }
+
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
+  }
+
+};
+
+firstAndPike.generateList();
+seaTac.generateList();
+seattleCenter.generateList();
+capitolHill.generateList();
+alki.generateList();
