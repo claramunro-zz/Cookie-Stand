@@ -3,7 +3,7 @@
 // Global Variables
 var openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
-var storeTable = document.getElementById('generate-here');
+var storeTable = document.getElementById('table');
 
 // Constructor Functions
 function Construct(minCust, maxCust, avgCookiePerCust) {
@@ -40,6 +40,9 @@ Construct.prototype.generateList = function() {
     storeTable.appendChild(trEl);
   }
 
+
+
+
   var ulElement = document.getElementById('first-pike');
   var runningTotal = 0;
 
@@ -52,7 +55,7 @@ Construct.prototype.generateList = function() {
     ulElement.appendChild(liElement);
   }
   var totalEl = document.createElement('li');
-  totalEl.textContent = `Total for the day: ${runningTotal}`;
+  totalEl.textContent = `Daily Location Total: ${runningTotal}`;
   ulElement.appendChild(totalEl);
 };
 
@@ -60,6 +63,23 @@ Construct.prototype.generateList = function() {
 
 
 Dog.renderHeader = function() {
+  var headerRow = document.createElement('tr');
+
+  var headings = ['1st & Pike','SeaTac Airport','Seattle Center', 'Capitol Hill', 'Alki'];
+  
+  for( var i = 0; i < openHours.length; i++) {
+  var thEl = document.createElement('th');
+  thEl.textContent = headings[1];
+  headerRow.appendChild(thEl);
+
+  }
+// append row to the table
+dogtable.appendChild(headerRow);
+
+}
+
+
+Dog.renderFooter = function() {
   // create th element
   var headerRow = document.createElement('tr');
 
@@ -72,9 +92,6 @@ Dog.renderHeader = function() {
 
 
 
-
-
-
 // instances
 var firstAndPike = new Construct(23, 65, 6.3);
 var seaTac = new Construct(3, 24, 1.2);
@@ -83,14 +100,13 @@ var capitolHill = new Construct(20, 38, 2.3);
 var alki = new Construct(2, 16, 4.6);
 
 
-
-
-
-
-
 // invoke methods
+dog.renderHeader();
+
 firstAndPike.generateList();
 seaTac.generateList();
 seattleCenter.generateList();
 capitolHill.generateList();
 alki.generateList();
+
+dog.renderFooter();
