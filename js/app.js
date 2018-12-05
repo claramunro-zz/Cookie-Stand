@@ -110,6 +110,79 @@ var seattleCenter =  {
 
 };
 
+// capitol-hill Store 4
+
+var capitolHill =  {
+  minCust: 3,
+  maxCust: 24,
+  avgCookiePerCust: 1.2,
+
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('capitol-hill');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
+      var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
+
+      ulElement.appendChild(liElement);
+    }
+
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
+  }
+
+};
+
+
+// Alki Store 5
+
+var alki =  {
+  minCust: 3,
+  maxCust: 24,
+  avgCookiePerCust: 1.2,
+
+  randomCustPerHour: function() {
+    return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
+  },
+
+  averagePerHour: function() {
+    return Math.round (this.randomCustPerHour() * this.avgCookiePerCust );
+  },
+
+  generateList: function() {
+    var ulElement = document.getElementById('alki');
+    var runningTotal = 0;
+
+    for(var i = 0; i < openHours.length; i++){
+      var liElement = document.createElement('li');
+      var randomNum = this.averagePerHour();
+      runningTotal += randomNum;
+      liElement.textContent = `${openHours[i]}: ${randomNum} cookies!`;
+
+      ulElement.appendChild(liElement);
+    }
+
+    var totalEl = document.createElement('li');
+    totalEl.textContent = `Total for the day: ${runningTotal}`;
+    ulElement.appendChild(totalEl);
+  }
+
+};
+
 firstAndPike.generateList();
 seaTac.generateList();
 seattleCenter.generateList();
+capitolHill.generateList();
+alki.generateList();
