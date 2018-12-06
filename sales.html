@@ -15,18 +15,18 @@
     <form id="new-form">
             <fieldset>
               <label for="name">Store Name</label>
-              <input id="name" type="text" name="name"/>
+              <input id="name" type="text" name="locationName" required/>
       
-              <label for="min-cust">Min # Customers Per Hour</label>
-              <input id="min-cust" type="text" name="mincustomers"/>
+              <label for="min">Min # Customers Per Hour</label>
+              <input id="min" type="number" min="0" step="1" name="minPerHour" required/>
       
-              <label for="max-cust">Max # Customers Per Hour</label>
-              <input id="max-cust" type="text" name="maxcustomers"/>
+              <label for="max">Max # Customers Per Hour</label>
+              <input id="max" type="number" min="0" step="1" name="maxPerHour" required/>
       
-              <label for="avg-cookies">Avg # Cookies Per Customer</label>
-              <input id="avg-cookies" type="text" name="averagecookies"/>
+              <label for="avg">Avg # Cookies Per Customer</label>
+              <input id="avg" type="number" min="0" step=".1" name="avgCook" required/>
     
-              <button>Add Store!</button>
+              <button id="store-button">Add Store!</button>
             </fieldset>
           </form>
 

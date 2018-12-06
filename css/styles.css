@@ -112,7 +112,7 @@ table {
       border-color: rgb(255, 153, 0);
     }
 
-    button {
+    #store-button {
       background-color: blue;
       color: white;
     }
