@@ -78,9 +78,9 @@ var seaTac =  {
 // Seattle Center Store 3
 
 var seattleCenter =  {
-  minCust: 3,
-  maxCust: 24,
-  avgCookiePerCust: 1.2,
+  minCust: 11,
+  maxCust: 38,
+  avgCookiePerCust: 3.7,
 
   randomCustPerHour: function() {
     return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
@@ -113,9 +113,9 @@ var seattleCenter =  {
 // capitol-hill Store 4
 
 var capitolHill =  {
-  minCust: 3,
-  maxCust: 24,
-  avgCookiePerCust: 1.2,
+  minCust: 20,
+  maxCust: 38,
+  avgCookiePerCust: 2.2,
 
   randomCustPerHour: function() {
     return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
@@ -149,9 +149,9 @@ var capitolHill =  {
 // Alki Store 5
 
 var alki =  {
-  minCust: 3,
-  maxCust: 24,
-  avgCookiePerCust: 1.2,
+  minCust: 2,
+  maxCust: 16,
+  avgCookiePerCust: 4.6,
 
   randomCustPerHour: function() {
     return Math.round( Math.random() * (this.maxCust - this.minCust) + this.minCust );
