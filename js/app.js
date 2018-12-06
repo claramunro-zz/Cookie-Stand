@@ -104,11 +104,9 @@ BuildStore.renderFooter = function() {
 
 // RENDER ALL!
 BuildStore.renderAll = function() {
-  BuildStore.renderHeader();
   for (var i = 0; i < BuildStore.allStores.length; i++) {
     BuildStore.allStores[i].render();
   }
-  BuildStore.renderFooter();
 };
 
 
@@ -135,7 +133,10 @@ new BuildStore('Seattle Center', 11, 38, 3.7);
 new BuildStore('Capitol Hill', 20, 38, 2.2);
 new BuildStore('Alki', 2, 16, 4.6);
 
+BuildStore.renderHeader();
 BuildStore.renderAll();
+BuildStore.renderFooter();
+
 
 // function fires when event occures, it's a method on the constructor itself -- a callback
 cookieForm.addEventListener('submit', BuildStore.addNewLocation);
