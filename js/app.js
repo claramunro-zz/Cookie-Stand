@@ -102,6 +102,16 @@ BuildStore.renderFooter = function() {
 };
 
 
+// RENDER ALL!
+BuildStore.renderAll = function() {
+  BuildStore.renderHeader();
+  for (var i = 0; i < BuildStore.allStores.length; i++) {
+    BuildStore.allStores[i].render();
+  }
+  BuildStore.renderFooter();
+};
+
+
 // we are defining this function that takes the event as parameter
 BuildStore.addNewLocation = function (event) {
   event.preventDefault();
@@ -118,19 +128,14 @@ BuildStore.addNewLocation = function (event) {
   BuildStore.renderFooter();
 };
 
+
 new BuildStore('1st & Pike', 23, 65, 6.3);
 new BuildStore('SeaTac Airport', 3, 24, 1.2);
 new BuildStore('Seattle Center', 11, 38, 3.7);
 new BuildStore('Capitol Hill', 20, 38, 2.2);
 new BuildStore('Alki', 2, 16, 4.6);
 
-
-// RENDER ALL!
-BuildStore.renderAll = function() {
-  for (var i = 0; i < BuildStore.allStores.length; i++) {
-    BuildStore.allStores[i].render();
-  }
-};
+BuildStore.renderAll();
 
 // function fires when event occures, it's a method on the constructor itself -- a callback
 cookieForm.addEventListener('submit', BuildStore.addNewLocation);
