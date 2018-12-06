@@ -3,12 +3,16 @@ body {
   }
   
   h1 {
-    font-size: 58px;
+    font-size: 60px;
     color: rgb(255, 255, 255);
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Bungee', cursive;
     text-align: center;
     padding-top: 100px;
-  }
+    filter: drop-shadow(10px 10px 20px #f0a401);
+      -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+    }
 
   h2 {
     font-size: 35px;
@@ -16,6 +20,9 @@ body {
     font-family: 'Bungee', cursive;
     text-align: center;
     padding-top: 25px;
+    filter: drop-shadow(10px 10px 10px #1d1d1d);
+    margin-top: -80px;
+
   }
 
   h3 {

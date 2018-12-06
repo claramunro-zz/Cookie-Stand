@@ -11,6 +11,9 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 // adds the footer #'s and store total #'s together
 var grandArray = [];
 
+// Link form with id #new-form from HTML to a JS variable!!
+var newStoreForm = document.getElementById('new-form');
+
 
 // Constructor Function
 function BuildStore (name, minCust, maxCust, avgCookiePerSale) {
@@ -97,7 +100,7 @@ BuildStore.renderFooter = function() {
 
   // adds the end cell which is the GRAND TOTAL of the END ROW (footer) & END CELL (per store)
   var grandGrand = 0;
-  for (var i = 0; i < grandArray.length; i++) {  // for each # in the array
+  for (var i = 0; i < grandArray.length; is++) {  // for each # in the array
     grandGrand += grandArray[i];  // add everything in grandArray up to equal grandGrand
   }
   tdEl = document.createElement('td');  // make a cell
