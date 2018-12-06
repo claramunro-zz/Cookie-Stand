@@ -3,19 +3,27 @@ body {
   }
   
   h1 {
-    font-size: 58px;
+    font-size: 60px;
     color: rgb(255, 255, 255);
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Bungee', cursive;
     text-align: center;
     padding-top: 100px;
-  }
+    margin-bottom: 0px;
+    filter: drop-shadow(10px 10px 20px #f0a401);
+      -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+    }
 
   h2 {
-    font-size: 35px;
+    font-size: 25px;
     color: white;
     font-family: 'Bungee', cursive;
     text-align: center;
     padding-top: 25px;
+    filter: drop-shadow(10px 10px 10px #1d1d1d);
+    margin-top: -80px;
+
   }
 
   h3 {
@@ -40,7 +48,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 50px;
+    padding-top: 30px;
     filter: drop-shadow(30px 10px 10px #1d1d1d);
     -webkit-transition: -webkit-transform .8s ease-in-out;
     transition: transform .8s ease-in-out;
@@ -61,6 +69,7 @@ body {
     width: 200px;
     border: 2px;
     border-color: black;
+    padding-top: 20px;
     padding-bottom: 100px;
   }
   
@@ -105,7 +114,7 @@ table {
       border-color: rgb(255, 153, 0);
     }
 
-    button {
+    #store-button {
       background-color: blue;
       color: white;
     }

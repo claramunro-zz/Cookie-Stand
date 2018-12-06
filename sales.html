@@ -8,11 +8,30 @@
 </head>
 <body>
     <h1> Salmon Cookies Sales </h1>
-    <img src="img/salmon.png" alt="salmon.png" width="400" height="auto">
+    <img src="img/salmon.png" alt="salmon.png" width="300" height="auto">
 
-    <h2> First & Pike </h2>
+    <h2> Add A Store </h2>
 
-    <table id="table"></table>
+    <form id="new-form">
+            <fieldset>
+              <label for="name">Store Name</label>
+              <input id="name" type="text" name="locationName" required/>
+      
+              <label for="min">Min # Customers Per Hour</label>
+              <input id="min" type="number" min="0" step="1" name="minPerHour" required/>
+      
+              <label for="max">Max # Customers Per Hour</label>
+              <input id="max" type="number" min="0" step="1" name="maxPerHour" required/>
+      
+              <label for="avg">Avg # Cookies Per Customer</label>
+              <input id="avg" type="number" min="0" step=".1" name="avgCook" required/>
+    
+              <button id="store-button">Add Store!</button>
+            </fieldset>
+          </form>
+
+          <table id="table"></table>
+
     
     <script src="js/app.js"></script>
 </body>

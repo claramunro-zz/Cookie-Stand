@@ -8,8 +8,11 @@ var salesTable = document.getElementById('table');
 // Store hours, X-axis
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-// adds the footer #'s and store total #'s together
+// holds all of the footer #'s and store total #'s
 var grandArray = [];
+
+// Link form with id #new-form from HTML to a JS variable!!
+var cookieForm = document.getElementById('new-form');
 
 
 // Constructor Function
@@ -66,14 +69,6 @@ BuildStore.renderHeader = function() {
 };
 
 
-// RENDER ALL!
-BuildStore.renderAll = function() {
-  for (var i = 0; i < BuildStore.allStores.length; i++) {
-    BuildStore.allStores[i].render();
-  }
-};
-
-
 // Render the footer ROW (adds totals for EACH HOUR)
 BuildStore.renderFooter = function() {
   // make the first cell with the label
@@ -86,23 +81,51 @@ BuildStore.renderFooter = function() {
   // iterate through the array, adding each total per hour, add to cell
   for (var x = 0; x < hours.length; x++) { // for each hour
     var counter = 0;
-    for (var j = 0; j < BuildStore.allStores.length; j++) {  // for each store
-      counter += BuildStore.allStores[j].cookiesPerHour[x];  // j = each store index, x = each cookiePerHour index
+    for (var j = 0; j < BuildStore.allStores.length; j++) { // for each store
+      counter += BuildStore.allStores[j].cookiesPerHour[x]; // j = each store index, x = each cookiePerHour index
     }
 
-    tdEl = document.createElement('td');  // create a cell
+    tdEl = document.createElement('td'); // create a cell
     tdEl.textContent = counter; // put the counter # as text
-    footerRow.appendChild(tdEl);  // add cell to the row
+    footerRow.appendChild(tdEl); // add cell to the row
   }
+
 
   // adds the end cell which is the GRAND TOTAL of the END ROW (footer) & END CELL (per store)
   var grandGrand = 0;
-  for (var i = 0; i < grandArray.length; i++) {  // for each # in the array
-    grandGrand += grandArray[i];  // add everything in grandArray up to equal grandGrand
+  for (var i = 0; i < grandArray.length; i++) { // for each # in the array
+    grandGrand += grandArray[i]; // add everything in grandArray up to equal grandGrand
   }
-  tdEl = document.createElement('td');  // make a cell
-  tdEl.textContent = grandGrand;  // put the total variable # in
+  tdEl = document.createElement('td'); // make a cell
+  tdEl.textContent = grandGrand; // put the total variable # in
   footerRow.appendChild(tdEl); // add it to the row
+};
+
+
+// RENDER ALL!
+BuildStore.renderAll = function() {
+  BuildStore.renderHeader();
+  for (var i = 0; i < BuildStore.allStores.length; i++) {
+    BuildStore.allStores[i].render();
+  }
+  BuildStore.renderFooter();
+};
+
+
+// we are defining this function that takes the event as parameter
+BuildStore.addNewLocation = function (event) {
+  event.preventDefault();
+
+  var name = event.target.locationName.value;
+  var minCust = event.target.minPerHour.value;
+  var maxCust = event.target.maxPerHour.value;
+  var avgCookiePerSale = event.target.avgCook.value;
+  new BuildStore(name, minCust, maxCust, avgCookiePerSale);
+
+  salesTable.textContent = '';
+  BuildStore.renderHeader();
+  BuildStore.renderAll();
+  BuildStore.renderFooter();
 };
 
 
@@ -112,7 +135,8 @@ new BuildStore('Seattle Center', 11, 38, 3.7);
 new BuildStore('Capitol Hill', 20, 38, 2.2);
 new BuildStore('Alki', 2, 16, 4.6);
 
-
-BuildStore.renderHeader();
 BuildStore.renderAll();
-BuildStore.renderFooter();
+
+// function fires when event occures, it's a method on the constructor itself -- a callback
+cookieForm.addEventListener('submit', BuildStore.addNewLocation);
+
